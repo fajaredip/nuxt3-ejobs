@@ -7,7 +7,7 @@
 		</section>
 		<section>
 			<div class="flex items-center justify-center w-full min-h-[20rem] bg-[#f6f6f6]">
-				Featured Section
+				<h1>Featured Section</h1>
 			</div>
 		</section>
 		<section class="flex w-full p-5 bg-[linear-gradient(45deg,#282560,#3486c9)] text-white">

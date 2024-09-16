@@ -1,5 +1,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
+import InputPrepend from "./InputPrepend.vue";
 
 export default defineComponent({
   props: {
@@ -7,6 +8,11 @@ export default defineComponent({
       type: Boolean,
       required: true,
     },
+  },
+  data() {
+    return {
+      email: "",
+    };
   },
   methods: {
     closeSidebar() {
@@ -31,10 +37,22 @@ export default defineComponent({
         />
         <div class="mt-16 flex flex-col items-center">
           <img src="/logo.png" alt="" class="w-36" />
-          <div>form</div>
+          <div class="w-full my-5">
+            <InputPrepend
+              v-model="email"
+              icon="fa-regular fa-envelope"
+              placeholder="Input Email"
+              class="mb-3"
+            />
+            <InputPrepend
+              v-model="email"
+              icon="fa-regular fa-envelope"
+              placeholder="Input Email"
+            />
+          </div>
           <div class="divider-container mt-8">
             <div class="divider-text">or login with</div>
-            <div class="divider-line" />
+            <div class="divider-line"></div>
           </div>
           <div class="flex items-center justify-between gap-2 w-full mt-8">
             <button

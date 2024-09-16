@@ -22,13 +22,32 @@
 </template>
 
 <style>
-	.page-enter-active,
-	.page-leave-active {
-		transition: all 0.4s;
+	.page-enter-active {
+		animation: fadeIn 0.5s ease;
 	}
-	.page-enter-from,
-	.page-leave-to {
-		opacity: 0;
-		filter: blur(1rem);
+	.page-leave-active {
+		animation: fadeOut 0.5s ease;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fadeOut {
+		from {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		to {
+			opacity: 0;
+			transform: translateY(-20px);
+		}
 	}
 </style>

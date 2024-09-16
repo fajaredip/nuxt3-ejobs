@@ -1,6 +1,5 @@
 <script lang="ts">
 import { defineComponent } from "vue";
-import InputPrepend from "./InputPrepend.vue";
 
 export default defineComponent({
   props: {
@@ -28,14 +27,14 @@ export default defineComponent({
       v-if="isOpen"
       class="flex flex-col fixed right-0 top-0 w-full sm:w-[23rem] h-full bg-white z-50 p-6 login-container"
     >
-      <div class="grow relative">
+      <div class="relative grow">
         <img
           src="/icon-close.svg"
           alt=""
           class="absolute top-0 left-0 cursor-pointer hover:grayscale-[50%]"
           @click="closeSidebar"
         />
-        <div class="mt-16 flex flex-col items-center">
+        <div class="flex flex-col items-center mt-16">
           <img src="/logo.png" alt="" class="w-36" />
           <div class="w-full my-5">
             <InputPrepend
@@ -50,11 +49,11 @@ export default defineComponent({
               placeholder="Input Email"
             />
           </div>
-          <div class="divider-container mt-8">
+          <div class="mt-8 divider-container">
             <div class="divider-text">or login with</div>
             <div class="divider-line"></div>
           </div>
-          <div class="flex items-center justify-between gap-2 w-full mt-8">
+          <div class="flex items-center justify-between w-full gap-2 mt-8">
             <button
               class="bg-white hover:bg-gray-200 font-semibold py-2 px-4 rounded inline-flex items-center justify-between border-[#c5d3de] border-[1.5px] w-full"
             >
@@ -70,7 +69,7 @@ export default defineComponent({
           </div>
         </div>
       </div>
-      <p class="text-center text-sm font-normal">
+      <p class="text-sm font-normal text-center">
         ELABRAM SYSTEMS has never requested any amount of money / gratification
         in any form. If you found any of those, please report it immediately to
         <span class="text-[#7491a7] font-medium">compliance@elabram.com</span>

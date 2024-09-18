@@ -13,19 +13,31 @@
 		{
 			id: 1,
 			job_name: "Frontend Developer",
-			company: "Google",
+			job_level: "Staff/Officer",
+			job_location: "Kuala Lumpur, Malaysia",
+			job_education: "Bachelor",
+			job_salary: "MYR 4.000 - 5.000",
+			posted_date: "Posted on Aug 20, 2021",
 			status: "Applied",
 		},
 		{
 			id: 2,
 			job_name: "Backend Developer",
-			company: "Apple Inc.",
+			job_level: "Junior Executive",
+			job_location: "Surabaya, Indonesia",
+			job_education: "Diploma/Undergraduate",
+			job_salary: "IDR 4.000.000 - 5.000.000",
+			posted_date: "Posted on Dec 20, 2022",
 			status: "Submit to KAM",
 		},
 		{
 			id: 3,
 			job_name: "Fullstack Developer",
-			company: "Elabram Systems",
+			job_level: "Business Unit Head",
+			job_location: "All, China",
+			job_education: "High School/Vocational",
+			job_salary: "USD 7.000 - 8.000",
+			posted_date: "Posted on Jan 2, 2022",
 			status: "Submit to Client",
 		},
 	];
@@ -44,19 +56,23 @@
 				<div
 					v-for="item in applicationData"
 					:key="item.id"
-					class="flex flex-col justify-between p-5 bg-white rounded-lg min-h-32"
+					class="flex justify-between p-5 bg-white rounded-lg min-h-32"
 				>
-					<div>{{ item.job_name }} - {{ item.company }}</div>
-					<div>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias,
-						possimus? Ex soluta repellat laborum hic alias delectus minima natus
-						iste quaerat, dicta perferendis consectetur. Beatae, pariatur. Ut
-						doloribus nemo minima!
+					<div class="flex flex-col items-start justify-between grow">
+						<div class="text-xl font-semibold">{{ item.job_name }}</div>
+						<div class="text-base">{{ item.job_level }}</div>
+						<div class="flex items-center justify-between w-full">
+							<div class="w-1/3">{{ item.job_location }}</div>
+							<div class="w-1/3">{{ item.job_education }}</div>
+							<div class="w-1/3">{{ item.job_salary }}</div>
+						</div>
 					</div>
-					<div class="flex justify-end w-full">
+					
+					<div class="flex flex-col items-end justify-between">
+						<div class="text-sm italic text-gray-400">{{ item.posted_date }}</div>
 						<NuxtLink
 							:to="`/job/detail/${item.id}`"
-							class="px-8 py-3 text-lg text-white bg-green-600 rounded-lg hover:bg-green-700"
+							class="px-6 py-2 text-lg text-white bg-green-600 rounded-lg w-fit hover:bg-green-700"
 							>Detail</NuxtLink
 						>
 					</div>

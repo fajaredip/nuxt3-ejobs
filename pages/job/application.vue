@@ -46,25 +46,25 @@
 <template>
 	<div class="container mx-auto">
 		<div class="flex items-start justify-start w-full gap-8">
-			<div class="sticky top-0 hidden w-1/5 md:block">
+			<div class="sticky top-0 hidden w-1/5 lg:block">
 				<div class="flex flex-col gap-4">
 					<FilterApp />
 					<StatusApp />
 				</div>
 			</div>
-			<div class="flex flex-col w-full gap-4 md:w-4/5">
+			<div class="flex flex-col w-full gap-4 lg:w-4/5">
 				<div
 					v-for="item in applicationData"
 					:key="item.id"
-					class="flex justify-between p-5 bg-white rounded-lg min-h-32"
+					class="flex justify-between p-5 bg-white rounded-lg dark:bg-gray-800 min-h-32"
 				>
-					<div class="flex flex-col items-start justify-between grow">
+					<div class="flex flex-col items-start justify-between text-black grow dark:text-white">
 						<div class="text-xl font-semibold">{{ item.job_name }}</div>
 						<div class="text-base">{{ item.job_level }}</div>
 						<div class="flex items-center justify-between w-full">
-							<div class="w-1/3">{{ item.job_location }}</div>
-							<div class="w-1/3">{{ item.job_education }}</div>
-							<div class="w-1/3">{{ item.job_salary }}</div>
+							<div class="w-1/3 truncate">{{ item.job_location }}</div>
+							<div class="w-1/3 truncate">{{ item.job_education }}</div>
+							<div class="w-1/3 truncate">{{ item.job_salary }}</div>
 						</div>
 					</div>
 					

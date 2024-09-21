@@ -12,7 +12,7 @@
 <template>
 	<div class="flex flex-col">
 		<section
-			class="flex items-center bg-amber-500 w-full min-h-[20rem] relative"
+			class="flex items-center bg-amber-500 dark:bg-amber-600 text-white w-full min-h-[20rem] relative"
 		>
 			<div class="container flex items-center justify-center mx-auto">
 				<h1>Hero Section</h1>

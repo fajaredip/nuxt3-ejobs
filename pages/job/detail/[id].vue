@@ -14,7 +14,7 @@
 
 <template>
 	<section>
-		<div class="container p-5 mx-auto">
+		<div class="container p-5 mx-auto text-black dark:text-white">
 			<p class="mb-5">This page will be displayed at the /job/detail/{{ id }} route.</p>
 			<NuxtLink
 				to="/job/application"

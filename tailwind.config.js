@@ -10,7 +10,12 @@ export default {
     "./nuxt.config.{js,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        black: '#0f0f0f',
+        white: '#f1f1f1'
+      },
+    },
   },
   plugins: [],
 };

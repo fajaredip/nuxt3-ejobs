@@ -2,7 +2,7 @@
 
 <template>
 	<div
-		class="flex items-start flex-col w-7/12 sm:w-3/4 bg-blue-600 text-white p-5 rounded-md"
+		class="flex flex-col items-start w-7/12 p-5 text-white bg-blue-700 rounded-md sm:w-3/4 dark:bg-blue-400 dark:text-black"
 	>
 		<h1 class="text-center">Find Career Opportunities, Register Now!</h1>
 		<div>inputs</div>

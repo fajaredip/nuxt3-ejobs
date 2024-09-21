@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full p-5 bg-white rounded-lg">
+	<div class="w-full p-5 text-black bg-white rounded-lg dark:bg-gray-800 dark:text-white">
 		<div class="flex items-center justify-between mb-3 text-lg font-semibold">
 			Filter
 			<i class="cursor-pointer fa-solid fa-arrows-rotate" />
@@ -9,7 +9,7 @@
 			<select
 				id="sortBy"
 				name=""
-				class="w-full p-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200 focus:border-blue-500"
+				class="w-full p-4 py-2 bg-white border border-gray-300 rounded-md dark:bg-gray-800 focus:ring focus:ring-blue-200 focus:border-blue-500"
 			>
 				<option value="">All</option>
 				<option value="1">Newest</option>
@@ -23,7 +23,7 @@
 			<select
 				id="status"
 				name=""
-				class="w-full p-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200 focus:border-blue-500"
+				class="w-full p-4 py-2 bg-white border border-gray-300 rounded-md dark:bg-gray-800 focus:ring focus:ring-blue-200 focus:border-blue-500"
 			>
 				<option value="">All</option>
 				<option value="1">Applied</option>

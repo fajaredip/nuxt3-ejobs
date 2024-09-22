@@ -72,11 +72,13 @@
 					>
 						Apply
 					</button>
-					<button
-						class="px-10 py-2 font-medium text-blue-200 rounded-lg bg-slate-400 hover:bg-slate-600"
-					>
-						Back
-					</button>
+					<NuxtLink to="/job/application">
+						<button
+							class="px-10 py-2 font-medium text-blue-200 rounded-lg bg-slate-400 hover:bg-slate-600"
+						>
+							Back
+						</button>
+					</NuxtLink>
 				</div>
 			</div>
 			<div

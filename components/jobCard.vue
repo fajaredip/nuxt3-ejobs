@@ -37,7 +37,7 @@
 		</div>
 		<div
 			v-if="props.job.status"
-			class="px-5 py-1 text-sm text-white rounded-b-lg"
+			class="px-5 py-2 text-sm text-white rounded-b-lg"
 			:class="{
 				'bg-[#0584d3]': props.job.status === 'Applied',
 				'bg-[#4d5963]': props.job.status === 'Submit to KAM',

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 	useHead({
+		title: "E-Jobs",
 		link: [
 			{
 				rel: "stylesheet",

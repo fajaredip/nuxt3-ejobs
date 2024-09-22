@@ -6,6 +6,5 @@
 		<main class="py-5 overflow-auto grow bg-slate-300 dark:bg-slate-950">
 			<NuxtPage />
 		</main>
-		<AppFooter />
 	</div>
 </template>

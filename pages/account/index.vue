@@ -8,7 +8,7 @@ definePageMeta({
 </script>
 
 <template>
-	<section>
+	<section class="text-black dark:text-white">
 		<div class="container p-5 mx-auto">
 			<p>This page will be displayed at the /account/profile route.</p>
 			<NuxtLink to="/">Landing page</NuxtLink>

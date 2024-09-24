@@ -34,14 +34,14 @@
         </button>
       </div>
       <div>
-        <UserAvatar @update-theme="updateTheme" />
+        <UserDropdown @update-theme="updateTheme" />
       </div>
     </nav>
   </header>
 </template>
 
 <script setup lang="ts">
-import { ref, defineEmits, computed } from "vue";
+import { ref, computed } from "vue";
 
 // Emit events for the sidebar
 const emit = defineEmits(["toggle-sidebar"]);

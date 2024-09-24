@@ -7,32 +7,32 @@
 				<p class="mb-2 lg:mb-0">Copyright 2019 Elabram | All Rights Reserved</p>
 				<ul class="flex items-center gap-3">
 					<li>
-						<NuxtLink to="/account/profile" class="hover:underline"
+						<NuxtLink to="/" class="hover:underline"
 							>About Us</NuxtLink
 						>
 					</li>
 					<li>
-						<NuxtLink to="/account/profile" class="hover:underline"
+						<NuxtLink to="/" class="hover:underline"
 							>Blog</NuxtLink
 						>
 					</li>
 					<li>
-						<NuxtLink to="/account/profile" class="hover:underline"
+						<NuxtLink to="/" class="hover:underline"
 							>Contact</NuxtLink
 						>
 					</li>
 					<li>
-						<NuxtLink to="/account/profile" class="hover:underline"
+						<NuxtLink to="/" class="hover:underline"
 							>Hotline Service</NuxtLink
 						>
 					</li>
 					<li>
-						<NuxtLink to="/account/profile" class="hover:underline"
+						<NuxtLink to="/" class="hover:underline"
 							>Terms & Condition</NuxtLink
 						>
 					</li>
 					<li>
-						<NuxtLink to="/account/profile" class="hover:underline"
+						<NuxtLink to="/" class="hover:underline"
 							>Privacy Policy</NuxtLink
 						>
 					</li>

@@ -1,16 +1,15 @@
-<!-- eslint-disable vue/html-self-closing -->
 <template>
-  <header class="sticky top-0 z-40 bg-white shadow dark:bg-gray-800">
+  <header class="sticky top-0 z-40 bg-white shadow dark:bg-gray-800 dark:border-slate-950 dark:border-b">
     <nav class="container flex items-center justify-between p-5 mx-auto">
       <div class="flex items-center justify-between flex-grow gap-5">
         <div class="flex items-center gap-5">
-          <img :src="logoSrc" alt="Logo" class="flex-shrink-0 w-40" />
+          <img :src="logoSrc" alt="Logo" class="flex-shrink-0 w-40">
           <ul class="flex items-center gap-10 ml-7">
             <NuxtLink to="/job/vacancy">
               <li
                 class="flex items-center text-black cursor-pointer dark:text-white"
               >
-                <i class="mr-2 fa-solid fa-briefcase"></i>
+                <i class="mr-2 fa-solid fa-briefcase" />
                 <span class="hidden lg:block">Job Board</span>
               </li>
             </NuxtLink>
@@ -18,7 +17,7 @@
               <li
                 class="flex items-center text-black cursor-pointer dark:text-white"
               >
-                <i class="mr-2 fa-solid fa-folder"></i>
+                <i class="mr-2 fa-solid fa-folder" />
                 <span class="hidden lg:block">Job Application</span>
               </li>
             </NuxtLink>

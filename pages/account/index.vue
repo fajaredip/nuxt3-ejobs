@@ -10,13 +10,13 @@
         <div class="relative flex items-start justify-start min-w-fit">
           <UserAvatar class="rounded-lg size-36" />
           <span
-            class="absolute flex items-center justify-center p-2 text-xs text-white bg-blue-500 border-4 border-white rounded-full cursor-pointer dark:border-gray-800 top-3 -right-4 hover:bg-blue-600"
+            class="absolute flex items-center justify-center p-2 text-xs text-white bg-blue-500 border-4 border-white rounded-full cursor-pointer dark:border-gray-800 top-3 -right-[1.15rem] hover:bg-blue-600"
           >
             <i class="fa-solid fa-camera" />
           </span>
         </div>
         <div class="flex flex-col items-start justify-start">
-          <div class="mb-5 text-3xl text-center md:text-left">
+          <div class="mb-5 text-3xl font-semibold text-center md:text-left">
             Mr. Fajar Edi Prabowo
           </div>
           <div
@@ -35,24 +35,49 @@
               <span>+62 812 3456 7890</span>
             </span>
           </div>
-          <div class="text-sm">test adding mem_about_,me</div>
+          <div class="text-sm">
+            <p>
+              I’m a passionate Front-End Developer with experience in building
+              responsive, user-friendly web applications. Proficient in modern
+              JavaScript frameworks such as React, Next.js, and Nuxt.js, I
+              specialize in crafting intuitive user interfaces that enhance the
+              overall user experience. With a keen eye for detail and design, I
+              work closely with teams to transform ideas into visually appealing
+              and functional web applications.
+            </p>
+            <br />
+            <p>
+              I'm continuously learning and adapting to new technologies,
+              currently exploring TypeScript and strengthening my skills in
+              Tailwind CSS and responsive design. I have hands-on experience
+              with version control (Git), RESTful APIs, and optimizing web
+              performance. My goal is to build accessible, efficient, and
+              scalable front-end solutions.
+            </p>
+            <br />
+            <p>Let’s collaborate to bring your ideas to life!</p>
+          </div>
         </div>
       </div>
       <div class="flex gap-5">
-        <div class="flex flex-col w-full md:w-4/5">
-          <PersonalInformation :completeness="completeness.personal_information" />
+        <div class="flex flex-col w-full grow">
+          <PersonalInformation
+            :completeness="completeness.personal_information"
+          />
           <FormalEducation :completeness="completeness.formal_education" />
           <WorkExperience :completeness="completeness.work_experience" />
           <Course :completeness="completeness.course" />
           <Skill :completeness="completeness.skill" />
           <Achievement :completeness="completeness.achievement" />
         </div>
-        <div class="flex-col hidden w-1/5 gap-5 md:flex">
-          <div class="p-5 bg-white rounded-lg dark:bg-gray-800">
-            Profile Completion
+        <div class="flex-col hidden gap-5 w-80 md:flex">
+          <ProfileStrength :completeness="completeness" />
+          <div class="px-5 py-3 bg-white rounded-lg dark:bg-gray-800">
+            Submenu
           </div>
-          <div class="p-5 bg-white rounded-lg dark:bg-gray-800">Submenu</div>
-          <div class="p-5 bg-white rounded-lg dark:bg-gray-800">Navigation</div>
+          <div class="px-5 py-3 bg-white rounded-lg dark:bg-gray-800">
+            Navigation
+          </div>
         </div>
       </div>
     </div>
@@ -66,6 +91,7 @@ import WorkExperience from "~/components/account/workExperience.vue";
 import Course from "~/components/account/course.vue";
 import Skill from "~/components/account/skill.vue";
 import Achievement from "~/components/account/achievement.vue";
+import ProfileStrength from "~/components/account/profileStrength.vue";
 
 definePageMeta({
   layout: "default",
@@ -78,8 +104,8 @@ const completeness = {
   achievement: true,
   course: true,
   cv: true,
-  formal_education: true,
-  percentage: "90%",
+  formal_education: false,
+  percentage: "45%",
   personal_information: true,
   photo: true,
   skill: false,

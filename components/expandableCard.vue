@@ -1,19 +1,23 @@
 <template>
-  <div class="relative flex">
+  <div
+    class="relative flex before:border-l-4 before:absolute before:left-4 before:top-0 before:h-full before:last-of-type:border-none"
+    :class="props.completeness ? 'before:border-blue-500' : 'before:border-gray-400'"
+  >
     <div
-      class="flex items-center justify-center p-2 mr-3 font-extrabold text-white rounded-full size-8 before:border-l-4 before:border-gray-400 before:absolute before:left-[0.8rem] before:top-0 before:h-full"
-      :class="props.completeness ? 'bg-blue-500' : 'bg-gray-500'"
+      class="flex items-start justify-center h-full mr-3 font-extrabold text-white"
     >
       <i
-        class="fa-solid"
-        :class="props.completeness ? 'fa-check' : 'fa-times'"
+        class="z-10 flex items-center justify-center rounded-full size-9 fa-solid"
+        :class="
+          props.completeness ? 'fa-check bg-blue-500' : 'fa-times bg-gray-400'
+        "
       />
     </div>
     <div
       class="w-full mb-5 bg-white rounded-lg cursor-pointer dark:bg-gray-800"
     >
       <div
-        class="flex items-center justify-between px-5 py-4"
+        class="flex items-center justify-between px-5 py-3"
         @click="toggleCard"
       >
         <div class="flex items-center justify-start">

@@ -5,7 +5,7 @@
     class="w-full"
     :completeness="props.completeness"
   >
-    <div class="p-5">This card contains personal information content.</div>
+    <div class="p-5 text-sm">This card contains personal information content.</div>
   </ExpandableCard>
 </template>
 <script setup lang="ts">

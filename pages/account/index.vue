@@ -2,7 +2,15 @@
   <section class="text-black dark:text-white">
     <div class="container px-5 mx-auto">
       <div class="p-5 mb-5 bg-white rounded-lg dark:bg-gray-800 md:hidden">
-        Profile Completion
+        <p class="mb-2 text-lg font-semibold">
+          {{ completeness.percentage }} Profile Strength
+        </p>
+        <div class="w-full h-2 bg-gray-300 rounded-full">
+          <div
+            class="h-2 bg-blue-500 rounded-full"
+            :style="{ width: completeness.percentage }"
+          />
+        </div>
       </div>
       <div
         class="flex flex-col items-center gap-8 p-5 mb-5 bg-white rounded-lg md:flex-row md:items-start dark:bg-gray-800"
@@ -72,8 +80,29 @@
         </div>
         <div class="flex-col hidden gap-5 w-80 md:flex">
           <ProfileStrength :completeness="completeness" />
-          <div class="px-5 py-3 bg-white rounded-lg dark:bg-gray-800">
-            Submenu
+          <div class="p-2 bg-white rounded-lg dark:bg-gray-800">
+            <ul>
+              <li class="px-3 py-2 text-sm rounded-lg cursor-pointer hover:dark:bg-gray-600 hover:bg-slate-200">
+                <i class="w-6 fa-solid fa-file-lines" />
+                Upload CV
+              </li>
+              <li class="px-3 py-2 text-sm rounded-lg cursor-pointer hover:dark:bg-gray-600 hover:bg-slate-200">
+                <i class="w-6 fa-solid fa-video" />
+                Upload Video Profile
+              </li>
+              <NuxtLink to="/account/change-password">
+                <li class="px-3 py-2 text-sm rounded-lg cursor-pointer hover:dark:bg-gray-600 hover:bg-slate-200">
+                  <i class="w-6 fa-solid fa-user-gear" />
+                  Account Setting
+                </li>
+              </NuxtLink>
+              <NuxtLink to="/account/summary">
+                <li class="px-3 py-2 text-sm rounded-lg cursor-pointer hover:dark:bg-gray-600 hover:bg-slate-200">
+                  <i class="w-6 fa-solid fa-list-check" />
+                  Summary
+                </li>
+              </NuxtLink>
+            </ul>
           </div>
           <div class="px-5 py-3 bg-white rounded-lg dark:bg-gray-800">
             Navigation

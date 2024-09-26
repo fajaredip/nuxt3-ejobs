@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import FormalEducation from '~/components/account/formalEducation.vue';
+import PersonalInformation from '~/components/account/personalInformation.vue';
+import WorkExperience from '~/components/account/workExperience.vue';
+import Course from '~/components/account/course.vue';
+import Skill from '~/components/account/skill.vue';
+import Achievement from '~/components/account/achievement.vue';
+
 definePageMeta({
   layout: "default",
   layoutTransition: {
@@ -18,7 +25,7 @@ definePageMeta({
           <UserAvatar class="size-36" />
         </div>
         <div class="flex flex-col items-start justify-start">
-          <div class="mb-5 text-4xl text-center md:text-left">Mr. Fajar Edi Prabowo</div>
+          <div class="mb-5 text-3xl text-center md:text-left">Mr. Fajar Edi Prabowo</div>
           <div class="flex flex-col items-start justify-start gap-5 mb-3 text-sm md:flex-row">
             <span>
               <i class="mr-2 fa-solid fa-location-dot" />
@@ -51,26 +58,19 @@ definePageMeta({
       </div>
       <div class="flex gap-5">
         <div class="flex flex-col w-full gap-5 md:w-4/5">
-          <div class="p-5 bg-white rounded-lg dark:bg-gray-800">
-            Personal Information
-          </div>
-          <div class="p-5 bg-white rounded-lg dark:bg-gray-800">
-            Formal Education
-          </div>
-          <div class="p-5 bg-white rounded-lg dark:bg-gray-800">
-            Work Experience
-          </div>
-          <div class="p-5 bg-white rounded-lg dark:bg-gray-800">Course</div>
-          <div class="p-5 bg-white rounded-lg dark:bg-gray-800">Skill</div>
-          <div class="p-5 bg-white rounded-lg dark:bg-gray-800">
-            Achievement
-          </div>
+          <PersonalInformation />
+          <FormalEducation />
+          <WorkExperience />
+          <Course />
+          <Skill />
+          <Achievement />
         </div>
         <div class="flex-col hidden w-1/5 gap-5 md:flex">
           <div class="p-5 bg-white rounded-lg dark:bg-gray-800">
             Profile Completion
           </div>
           <div class="p-5 bg-white rounded-lg dark:bg-gray-800">Submenu</div>
+          <div class="p-5 bg-white rounded-lg dark:bg-gray-800">Navigation</div>
         </div>
       </div>
     </div>

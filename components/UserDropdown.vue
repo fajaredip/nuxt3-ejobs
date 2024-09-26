@@ -1,8 +1,8 @@
 <template>
   <DropdownMenu>
-    <DropdownMenuTrigger asChild class="flex items-center justify-center">
+    <DropdownMenuTrigger as-child class="flex items-center justify-center">
       <button class="focus:outline-none">
-        <UserAvatar class="size-10" />
+        <UserAvatar class="rounded-full size-10" />
       </button>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end">

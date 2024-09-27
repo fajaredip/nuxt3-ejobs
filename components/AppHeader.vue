@@ -7,7 +7,7 @@
           <ul class="flex items-center gap-10 ml-7">
             <NuxtLink to="/job/vacancy">
               <li
-                class="flex items-center text-black cursor-pointer dark:text-white"
+                class="flex items-center cursor-pointer text-slate-800 dark:text-white"
               >
                 <i class="mr-2 fa-solid fa-briefcase" />
                 <span class="hidden lg:block">Job Board</span>
@@ -15,7 +15,7 @@
             </NuxtLink>
             <NuxtLink to="/job/application">
               <li
-                class="flex items-center text-black cursor-pointer dark:text-white"
+                class="flex items-center cursor-pointer text-slate-800 dark:text-white"
               >
                 <i class="mr-2 fa-solid fa-folder" />
                 <span class="hidden lg:block">Job Application</span>
@@ -26,10 +26,10 @@
       </div>
       <div class="hidden">
         <button
-          class="px-4 py-2 text-white bg-blue-800 rounded dark:text-black dark:bg-blue-400"
+          class="px-4 py-2 text-white bg-blue-800 rounded dark:text-slate-500 dark:bg-blu6-400"
           @click="openSidebar"
         >
-          Button 1
+          Login
         </button>
       </div>
       <div>

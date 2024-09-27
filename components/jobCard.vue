@@ -5,7 +5,7 @@
 			:class="props.job.status ? 'rounded-b-none' : ''"
 		>
 			<div
-				class="flex flex-col items-start justify-between text-black grow dark:text-white"
+				class="flex flex-col items-start justify-between text-slate-800 grow dark:text-white"
 			>
 				<div class="text-xl font-semibold">
 					{{ props.job.job_name }}

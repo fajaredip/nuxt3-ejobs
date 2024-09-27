@@ -14,7 +14,7 @@
 
 <template>
 	<section
-		class="container flex gap-5 px-5 mx-auto overflow-visible text-black dark:text-white"
+		class="container flex gap-5 px-5 mx-auto overflow-visible text-slate-800 dark:text-white"
 	>
 		<div class="flex flex-col w-full gap-5 xl:w-4/5">
 			<div
@@ -90,7 +90,7 @@
 							>Job Description</span
 						>
 						<div
-							class="flex-grow border-t border-black dark:border-white"
+							class="flex-grow border-t border-slate-400 dark:border-white"
 						/>
 					</div>
 					<ol class="pl-5 list-decimal">
@@ -138,7 +138,7 @@
 							>Requirement</span
 						>
 						<div
-							class="flex-grow border-t border-black dark:border-white"
+							class="flex-grow border-t border-slate-400 dark:border-white"
 						/>
 					</div>
 					<ol class="pl-5 list-decimal">
@@ -169,7 +169,7 @@
 							>Additional Requirement</span
 						>
 						<div
-							class="flex-grow border-t border-black dark:border-white"
+							class="flex-grow border-t border-slate-400 dark:border-white"
 						/>
 					</div>
 					<ol class="pl-5 list-decimal">
@@ -200,7 +200,7 @@
 							>Job Information</span
 						>
 						<div
-							class="flex-grow border-t border-black dark:border-white"
+							class="flex-grow border-t border-slate-400 dark:border-white"
 						/>
 					</div>
 					<ol class="pl-5 list-decimal">

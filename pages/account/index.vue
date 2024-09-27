@@ -1,5 +1,5 @@
 <template>
-  <section class="text-black dark:text-white">
+  <section class="text-slate-800 dark:text-white">
     <div class="container px-5 mx-auto">
       <div class="p-5 mb-5 bg-white rounded-lg dark:bg-gray-800 md:hidden">
         <p class="mb-2 text-lg font-semibold">

@@ -17,7 +17,7 @@
       class="w-full mb-5 bg-white rounded-lg dark:bg-gray-800"
     >
       <div
-        class="flex items-center justify-between px-5 py-3 cursor-pointer "
+        class="flex items-center justify-between px-5 py-4 cursor-pointer "
         @click="toggleCard"
       >
         <div class="flex items-center justify-start">
@@ -38,7 +38,7 @@
         <div
           v-if="isCardOpen"
           ref="cardContent"
-          class="overflow-hidden border-t border-black dark:border-gray-600"
+          class="overflow-hidden border-t border-slate-400 dark:border-gray-600"
         >
           <slot />
           <!-- Slot for dynamic content -->

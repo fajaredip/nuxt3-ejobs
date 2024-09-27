@@ -3,5 +3,32 @@
 @tailwind utilities;
 
 * {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #cbd5e1; /* Light mode track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7e7575;
+  border-radius: 8px; /* Light mode border */
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #151521; /* Light mode track */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #7e7575;
+  border-radius: 8px; /* Light mode border */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6d6565; /* Darker on hover */
 }

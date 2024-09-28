@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div
-			class="flex justify-between p-5 bg-white rounded-lg dark:bg-gray-800 min-h-32"
+			class="flex justify-between p-5 bg-white rounded-md dark:bg-gray-800 min-h-32"
 			:class="props.job.status ? 'rounded-b-none' : ''"
 		>
 			<div
@@ -30,7 +30,7 @@
 				</div>
 				<NuxtLink
 					:to="`/job/detail/${props.job.id}`"
-					class="px-6 py-2 text-lg text-white bg-green-600 rounded-lg w-fit hover:bg-green-700"
+					class="px-6 py-2 text-lg text-white bg-green-600 rounded-md w-fit hover:bg-green-700"
 					>Detail</NuxtLink
 				>
 			</div>

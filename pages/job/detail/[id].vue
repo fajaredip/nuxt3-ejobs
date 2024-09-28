@@ -18,7 +18,7 @@
 	>
 		<div class="flex flex-col w-full gap-5 xl:w-4/5">
 			<div
-				class="flex flex-col items-start justify-between p-5 bg-white rounded-lg dark:bg-gray-800"
+				class="flex flex-col items-start justify-between p-5 bg-white rounded-md dark:bg-gray-800"
 			>
 				<div
 					class="flex flex-col-reverse items-start justify-between w-full mb-3 lg:flex-row lg:mb-5"
@@ -33,7 +33,7 @@
 							26 <i class="fa-regular fa-eye" />
 						</div>
 						<div
-							class="flex items-center gap-2 px-3 py-2 text-xs font-medium bg-gray-300 rounded-lg dark:bg-gray-600 whitespace-nowrap"
+							class="flex items-center gap-2 px-3 py-2 text-xs font-medium bg-gray-300 rounded-md dark:bg-gray-600 whitespace-nowrap"
 						>
 							<img
 								src="/cb-indonesia.png"
@@ -68,13 +68,13 @@
 				</div>
 				<div class="flex gap-5 xl:hidden">
 					<button
-						class="px-10 py-2 font-medium text-white bg-green-600 rounded-lg hover:bg-green-700"
+						class="px-10 py-2 font-medium text-white bg-green-600 rounded-md hover:bg-green-700"
 					>
 						Apply
 					</button>
 					<NuxtLink to="/job/application">
 						<button
-							class="px-10 py-2 font-medium text-blue-200 rounded-lg bg-slate-400 hover:bg-slate-600"
+							class="px-10 py-2 font-medium text-blue-200 rounded-md bg-slate-400 hover:bg-slate-600"
 						>
 							Back
 						</button>
@@ -82,7 +82,7 @@
 				</div>
 			</div>
 			<div
-				class="flex flex-col items-start justify-between p-5 bg-white rounded-lg dark:bg-gray-800"
+				class="flex flex-col items-start justify-between p-5 bg-white rounded-md dark:bg-gray-800"
 			>
 				<div class="mb-5">
 					<div class="relative flex items-center w-full mb-4">
@@ -230,13 +230,13 @@
 		<div class="hidden xl:block xl:w-1/5">
 			<div class="sticky top-0 flex flex-col gap-3">
 				<button
-					class="w-full px-10 py-5 text-xl font-medium text-white bg-green-600 rounded-lg hover:bg-green-700"
+					class="w-full px-10 py-5 text-xl font-medium text-white bg-green-600 rounded-md hover:bg-green-700"
 				>
 					Apply
 				</button>
 				<NuxtLink to="/job/application">
 					<button
-						class="w-full px-10 py-3 font-medium text-blue-200 rounded-lg bg-slate-400 hover:bg-slate-600"
+						class="w-full px-10 py-3 font-medium text-blue-200 rounded-md bg-slate-400 hover:bg-slate-600"
 					>
 						Back
 					</button>

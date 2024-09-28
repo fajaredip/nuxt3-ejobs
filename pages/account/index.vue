@@ -1,7 +1,7 @@
 <template>
   <section class="text-slate-800 dark:text-white">
     <div class="container px-5 mx-auto">
-      <div class="p-5 mb-5 bg-white rounded-lg dark:bg-gray-800 md:hidden">
+      <div class="p-5 mb-5 bg-white rounded-md dark:bg-gray-800 md:hidden">
         <p class="mb-2 text-lg font-semibold">
           {{ completeness.percentage }} Profile Strength
         </p>
@@ -13,10 +13,10 @@
         </div>
       </div>
       <div
-        class="flex flex-col items-center gap-8 p-5 mb-5 bg-white rounded-lg md:flex-row md:items-start dark:bg-gray-800"
+        class="flex flex-col items-center gap-8 p-5 mb-5 bg-white rounded-md md:flex-row md:items-start dark:bg-gray-800"
       >
         <div class="relative flex items-start justify-start min-w-fit">
-          <UserAvatar class="rounded-lg size-36" />
+          <UserAvatar class="rounded-md size-36" />
           <span
             class="absolute flex items-center justify-center p-2 text-xs text-white bg-blue-500 border-4 border-white rounded-full cursor-pointer dark:border-gray-800 top-3 -right-[1.15rem] hover:bg-blue-600"
           >
@@ -80,31 +80,31 @@
         </div>
         <div class="flex-col hidden gap-5 w-80 md:flex">
           <ProfileStrength :completeness="completeness" />
-          <div class="p-2 bg-white rounded-lg dark:bg-gray-800">
+          <div class="p-1 bg-white rounded-md dark:bg-gray-800">
             <ul>
-              <li class="px-3 py-2 text-sm rounded-lg cursor-pointer hover:dark:bg-gray-600 hover:bg-slate-200">
+              <li class="p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
                 <i class="w-6 fa-solid fa-file-lines" />
                 Upload CV
               </li>
-              <li class="px-3 py-2 text-sm rounded-lg cursor-pointer hover:dark:bg-gray-600 hover:bg-slate-200">
+              <li class="p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
                 <i class="w-6 fa-solid fa-video" />
                 Upload Video Profile
               </li>
               <NuxtLink to="/account/change-password">
-                <li class="px-3 py-2 text-sm rounded-lg cursor-pointer hover:dark:bg-gray-600 hover:bg-slate-200">
+                <li class="p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
                   <i class="w-6 fa-solid fa-user-gear" />
                   Account Setting
                 </li>
               </NuxtLink>
               <NuxtLink to="/account/summary">
-                <li class="px-3 py-2 text-sm rounded-lg cursor-pointer hover:dark:bg-gray-600 hover:bg-slate-200">
+                <li class="p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
                   <i class="w-6 fa-solid fa-list-check" />
                   Summary
                 </li>
               </NuxtLink>
             </ul>
           </div>
-          <div class="px-5 py-3 bg-white rounded-lg dark:bg-gray-800">
+          <div class="px-5 py-3 bg-white rounded-md dark:bg-gray-800">
             Navigation
           </div>
         </div>

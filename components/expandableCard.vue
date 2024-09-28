@@ -14,7 +14,7 @@
       />
     </div>
     <div
-      class="w-full mb-5 bg-white rounded-lg dark:bg-gray-800"
+      class="w-full mb-5 bg-white rounded-md dark:bg-gray-800"
     >
       <div
         class="flex items-center justify-between px-5 py-4 cursor-pointer "

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col px-5 py-3 bg-white rounded-lg dark:bg-gray-800">
+  <div class="flex flex-col px-5 py-3 bg-white rounded-md dark:bg-gray-800">
     <p class="mb-2 text-lg font-semibold">
       {{ props.completeness.percentage }} Profile Strength
     </p>

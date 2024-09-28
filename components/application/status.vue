@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="w-full p-5 text-slate-800 bg-white rounded-lg dark:bg-gray-800 dark:text-white"
+		class="w-full p-5 bg-white rounded-md text-slate-800 dark:bg-gray-800 dark:text-white"
 	>
 		<div class="mb-3 text-lg font-semibold">Get to know your journey</div>
 		<div class="mb-3">

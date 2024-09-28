@@ -90,7 +90,7 @@
                     : '/flags/indonesia.svg'
                 "
                 alt=""
-                class="ml-2 rounded-lg size-4"
+                class="ml-2 border rounded-lg size-4 border-slate-400 dark:border-transparent"
               />
             </span>
           </DropdownMenuSubTrigger>
@@ -106,7 +106,7 @@
                 <img
                   src="/flags/united-states.svg"
                   alt=""
-                  class="mr-3 rounded-lg size-4"
+                  class="mr-3 border rounded-lg size-4 border-slate-400 dark:border-transparent"
                 />
                 <span>English</span>
               </DropdownMenuItem>
@@ -118,7 +118,7 @@
                 <img
                   src="/flags/indonesia.svg"
                   alt=""
-                  class="mr-3 rounded-lg size-4"
+                  class="mr-3 border rounded-lg size-4 border-slate-400 dark:border-transparent"
                 />
                 <span>Indonesia</span>
               </DropdownMenuItem>

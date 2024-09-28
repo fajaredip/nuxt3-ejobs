@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full p-5 bg-white rounded-lg text-slate-800 dark:bg-gray-800 dark:text-white">
+	<div class="w-full p-5 bg-white rounded-md text-slate-800 dark:bg-gray-800 dark:text-white">
 		<div class="flex items-center justify-between mb-3 text-lg font-semibold">
 			Filter
 			<i class="cursor-pointer fa-solid fa-arrows-rotate" />

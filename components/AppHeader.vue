@@ -49,7 +49,7 @@ const emit = defineEmits(["toggle-sidebar"]);
 const router = useRouter();
 const isOpen = ref(false);
 const isLogin = ref("false");
-const appliedTheme = ref("light");
+const appliedTheme = ref("");
 
 const openSidebar = () => {
   isOpen.value = true;
@@ -65,6 +65,18 @@ const logoSrc = computed(() =>
 );
 
 onMounted(() => {
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
+    updateTheme("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+    updateTheme("light");
+  }
+  
   // check login
   if (localStorage.isLogin === "true") {
     isLogin.value = "true";
@@ -72,16 +84,6 @@ onMounted(() => {
   } else {
     isLogin.value = "false";
     router.push("/");
-  }
-
-  if (
-    localStorage.theme === "dark" ||
-    (!("theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    updateTheme("dark");
-  } else {
-    updateTheme("light");
   }
 });
 </script>

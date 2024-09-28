@@ -1,23 +1,23 @@
 <template>
   <section class="container px-5 mx-auto text-black dark:text-white">
     <div class="w-full mb-5">
-      <h1 class="font-semibold text-2xl">Popular Jobs</h1>
-      <p class="text-sm mb-5">Take a look at today trending job!</p>
+      <h1 class="text-2xl font-semibold">Popular Jobs</h1>
+      <p class="mb-5 text-sm">Take a look at today trending job!</p>
       <div
-        class="flex flex-col md:flex-row items-center justify-start w-full gap-5"
+        class="flex flex-col items-center justify-start w-full gap-5 md:flex-row"
       >
         <PopularJobCard
           v-for="item in applicationData"
           :key="item.id"
           :job="item"
-          class="h-full w-full md:w-1/3"
+          class="w-full md:w-[calc(33.333%-0.85rem)]"
         />
       </div>
     </div>
     <div class="flex items-start justify-start w-full gap-5">
       <div class="sticky top-0 hidden w-1/5 lg:block">
         <div class="flex flex-col gap-4">
-          <div class="bg-white rounded-md dark:bg-gray-800 p-5">Filter</div>
+          <div class="p-5 bg-white rounded-md dark:bg-gray-800">Filter</div>
         </div>
       </div>
       <div class="flex flex-col w-full gap-4 lg:w-4/5">

@@ -16,24 +16,24 @@ const props = defineProps<{ job: Job }>();
 <template>
   <NuxtLink
     :to="`/job/detail/${props.job.id}`"
-    class="p-5 bg-white rounded-md dark:bg-gray-800 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
+    class="p-5 text-sm bg-white rounded-md dark:bg-gray-800 hover:bg-slate-100 dark:hover:bg-slate-700"
   >
-    <p class="italic text-gray-400 text-xs mb-2">{{ props.job.posted_date }}</p>
+    <p class="mb-2 text-xs italic text-gray-400">{{ props.job.posted_date }}</p>
     <h2 class="text-2xl font-semibold truncate" :title="props.job.job_name">
       {{ props.job.job_name }}
     </h2>
     <p class="text-base">{{ props.job.job_level }}</p>
     <div class="flex flex-col items-start gap-2 mt-3">
-      <span>
-        <i class="mr-2 fa-solid fa-location-dot w-5" />
+      <span class="flex items-start">
+        <i class="w-5 mr-2 fa-solid fa-location-dot" />
         <span>{{ props.job.job_location }}</span>
       </span>
-      <span>
-        <i class="mr-2 fa-solid fa-graduation-cap w-5"></i>
+      <span class="flex items-start">
+        <i class="w-5 mr-2 fa-solid fa-graduation-cap" />
         <span>{{ props.job.job_education }}</span>
       </span>
-      <span>
-        <i class="mr-2 fa-solid fa-sack-dollar w-5"></i>
+      <span class="flex items-start">
+        <i class="w-5 mr-2 fa-solid fa-sack-dollar" />
         <span>{{ props.job.job_salary }}</span>
       </span>
     </div>

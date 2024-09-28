@@ -125,11 +125,9 @@
             </DropdownMenuSubContent>
           </DropdownMenuPortal>
         </DropdownMenuSub>
-        <NuxtLink to="/">
-          <DropdownMenuItem class="px-4 py-3">
+          <DropdownMenuItem class="px-4 py-3" @click="handleLogout">
             <span>Sign Out</span></DropdownMenuItem
           >
-        </NuxtLink>
       </DropdownMenuGroup>
     </DropdownMenuContent>
   </DropdownMenu>
@@ -147,6 +145,7 @@ import {
 import UserAvatar from "./UserAvatar.vue";
 import { onMounted } from "vue";
 
+const router = useRouter();
 const emit = defineEmits(["updateTheme"]);
 
 const activeTheme = ref("system");
@@ -182,6 +181,11 @@ const setTheme = (theme: string) => {
     }
   }
 };
+
+const handleLogout = () => {
+  localStorage.removeItem("isLogin");
+  router.push('/')
+}
 
 // Initialize theme based on localStorage or system preference
 onMounted(() => {

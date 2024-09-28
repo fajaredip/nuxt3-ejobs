@@ -1,30 +1,32 @@
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { ref } from "vue";
 
-export default defineComponent({
-  props: {
-    isOpen: {
-      type: Boolean,
-      required: true,
-    },
-  },
-  data() {
-    return {
-      email: "",
-    };
-  },
-  methods: {
-    closeSidebar() {
-      this.$emit("toggle-sidebar", false);
-    },
+const router = useRouter();
+const emit = defineEmits(["toggle-sidebar"]);
+
+const props = defineProps({
+  isOpen: {
+    type: Boolean,
+    required: true,
   },
 });
+
+const email = ref("");
+
+const closeSidebar = () => {
+  emit("toggle-sidebar", false);
+};
+
+const handleLogin = () => {
+  localStorage.setItem("isLogin", "true");
+  router.push("/job/vacancy");
+};
 </script>
 
 <template>
   <transition name="slide">
     <div
-      v-if="isOpen"
+      v-if="props.isOpen"
       class="flex flex-col fixed right-0 top-0 w-full sm:w-[23rem] h-full bg-white z-50 p-6 login-container"
     >
       <div class="relative grow">
@@ -36,22 +38,23 @@ export default defineComponent({
         />
         <div class="flex flex-col items-center mt-16">
           <img src="/logo.png" alt="" class="w-36" />
-          <div class="w-full my-5">
+          <div class="w-full mt-10">
             <InputPrepend
               v-model="email"
               icon="fa-regular fa-envelope"
               placeholder="Input Email"
               class="mb-3"
             />
-            <InputPrepend
-              v-model="email"
-              icon="fa-regular fa-envelope"
-              placeholder="Input Email"
-            />
+            <button
+              class="w-full p-2 text-white bg-green-500 rounded"
+              @click="handleLogin"
+            >
+              Login
+            </button>
           </div>
           <div class="mt-8 divider-container">
             <div class="divider-text">or login with</div>
-            <div class="divider-line"></div>
+            <div class="divider-line" />
           </div>
           <div class="flex items-center justify-between w-full gap-2 mt-8">
             <button

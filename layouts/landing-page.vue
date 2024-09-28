@@ -13,7 +13,7 @@ function handleToggleSidebar(isOpen: boolean) {
 <template>
   <div class="flex flex-col w-full min-h-screen">
     <AppHeader @toggle-sidebar="handleToggleSidebar" />
-    <SliderAuth :isOpen="isSidebarOpen" @toggle-sidebar="handleToggleSidebar" />
+    <SliderAuth :is-open="isSidebarOpen" @toggle-sidebar="handleToggleSidebar" />
     <main class="overflow-auto grow bg-slate-300">
       <NuxtPage />
     </main>

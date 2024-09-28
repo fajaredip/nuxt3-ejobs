@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="flex flex-col md:flex-row justify-between p-5 bg-white rounded-md dark:bg-gray-800 min-h-32"
+      class="flex flex-col justify-between p-5 bg-white rounded-md md:flex-row dark:bg-gray-800 min-h-32"
       :class="props.job.status ? 'rounded-b-none' : ''"
     >
       <div
@@ -25,7 +25,7 @@
       </div>
 
       <div
-        class="flex flex-col items-start lg:items-end justify-between lg:w-52"
+        class="flex flex-col items-start justify-between md:items-end lg:w-52"
       >
         <div class="text-sm italic text-gray-400">
           {{ props.job.posted_date }}

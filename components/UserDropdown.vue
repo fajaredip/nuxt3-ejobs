@@ -13,9 +13,7 @@
         <div class="flex items-center justify-start gap-5 px-3 py-3">
           <UserAvatar class="rounded-lg size-16" />
           <div>
-            <div class="mb-1 text-xl truncate max-w-52">
-              Fajar Edi Prabowo
-            </div>
+            <div class="mb-1 text-xl truncate max-w-52">Fajar Edi Prabowo</div>
             <div class="text-xs font-light truncate text-slate-400 max-w-52">
               fajaredip@gmail.com
             </div>
@@ -25,38 +23,112 @@
       <DropdownMenuSeparator />
       <DropdownMenuGroup>
         <NuxtLink to="/account">
-          <DropdownMenuItem class="px-4 py-3"> <span>Profile</span></DropdownMenuItem>
+          <DropdownMenuItem class="px-4 py-3">
+            <span>Profile</span></DropdownMenuItem
+          >
         </NuxtLink>
+        <NuxtLink to="/account/change-password">
+          <DropdownMenuItem class="px-4 py-3">
+            <span>Account Setting</span></DropdownMenuItem
+          >
+        </NuxtLink>
+        <DropdownMenuSeparator />
         <DropdownMenuSub>
-          <DropdownMenuSubTrigger class="px-4 py-3"> Theme </DropdownMenuSubTrigger>
+          <DropdownMenuSubTrigger class="px-4 py-3">
+            <span>Theme</span>
+            <i
+              class="ml-auto"
+              :class="{
+                'fa-solid fa-display': activeTheme === 'system',
+                'fa-regular fa-sun': activeTheme === 'light',
+                'fa-regular fa-moon': activeTheme === 'dark',
+              }"
+            />
+          </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
-            <DropdownMenuSubContent class="bg-white dark:bg-gray-900 dark:border-slate-700">
+            <DropdownMenuSubContent
+              class="bg-white dark:bg-gray-900 dark:border-slate-700"
+            >
               <DropdownMenuItem
-                class="flex items-center justify-between w-40 px-4 py-3 hover:text-blue-500"
+                class="flex items-center w-40 px-4 py-3"
                 :class="{ 'text-blue-500': activeTheme === 'system' }"
                 @click="setTheme('system')"
               >
-                <span><i class="w-8 fa-solid fa-desktop" />System</span>
+                <i class="w-5 mr-2 fa-solid fa-display" />
+                <span>System</span>
               </DropdownMenuItem>
               <DropdownMenuItem
-                class="flex items-center justify-between w-40 px-4 py-3 hover:text-blue-500"
+                class="flex items-center w-40 px-4 py-3"
                 :class="{ 'text-blue-500': activeTheme === 'light' }"
                 @click="setTheme('light')"
-              >
-                <span><i class="w-8 fa-solid fa-sun" />Light Mode</span>
+                ><i class="w-5 mr-2 fa-regular fa-sun" />
+                <span>Light Mode</span>
               </DropdownMenuItem>
               <DropdownMenuItem
-                class="flex items-center justify-between w-40 px-4 py-3 hover:text-blue-500"
+                class="flex items-center w-40 px-4 py-3"
                 :class="{ 'text-blue-500': activeTheme === 'dark' }"
                 @click="setTheme('dark')"
+                ><i class="w-5 mr-2 fa-regular fa-moon" />
+                <span>Dark Mode</span>
+              </DropdownMenuItem>
+            </DropdownMenuSubContent>
+          </DropdownMenuPortal>
+        </DropdownMenuSub>
+        <DropdownMenuSub>
+          <DropdownMenuSubTrigger class="px-4 py-3">
+            <span>Language</span>
+            <span
+              class="flex items-center px-2 py-1 ml-auto rounded-lg bg-slate-400/50"
+            >
+              <span class="text-[10px]">{{
+                activeLanguage === "en" ? "English" : "Indonesia"
+              }}</span>
+              <img
+                :src="
+                  activeLanguage === 'en'
+                    ? '/flags/united-states.svg'
+                    : '/flags/indonesia.svg'
+                "
+                alt=""
+                class="ml-2 rounded-lg size-4"
+              />
+            </span>
+          </DropdownMenuSubTrigger>
+          <DropdownMenuPortal>
+            <DropdownMenuSubContent
+              class="bg-white dark:bg-gray-900 dark:border-slate-700"
+            >
+              <DropdownMenuItem
+                class="w-40 px-4 py-3"
+                :class="{ 'text-blue-500': activeLanguage === 'en' }"
+                @click="setLanguage('en')"
               >
-                <span><i class="w-8 fa-solid fa-moon" />Dark Mode</span>
+                <img
+                  src="/flags/united-states.svg"
+                  alt=""
+                  class="mr-3 rounded-lg size-4"
+                />
+                <span>English</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                class="w-40 px-4 py-3"
+                :class="{ 'text-blue-500': activeLanguage === 'id' }"
+                @click="setLanguage('id')"
+              >
+                <img
+                  src="/flags/indonesia.svg"
+                  alt=""
+                  class="mr-3 rounded-lg size-4"
+                />
+                <span>Indonesia</span>
               </DropdownMenuItem>
             </DropdownMenuSubContent>
           </DropdownMenuPortal>
         </DropdownMenuSub>
         <NuxtLink to="/">
-          <DropdownMenuItem class="px-4 py-3"> <span>Logout</span></DropdownMenuItem>
+          <DropdownMenuItem class="px-4 py-3">
+            <span>Sign Out</span></DropdownMenuItem
+          >
         </NuxtLink>
       </DropdownMenuGroup>
     </DropdownMenuContent>
@@ -78,6 +150,11 @@ import { onMounted } from "vue";
 const emit = defineEmits(["updateTheme"]);
 
 const activeTheme = ref("system");
+const activeLanguage = ref("id");
+
+const setLanguage = (lang: string) => {
+  activeLanguage.value = lang;
+};
 
 const setTheme = (theme: string) => {
   const html = document.documentElement;

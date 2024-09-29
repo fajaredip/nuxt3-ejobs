@@ -1,8 +1,7 @@
 <template>
   <ExpandableCard
     title="Personal Information"
-    icon-class="fa-solid fa-id-card"
-    class="w-full"
+    icon-class="fa-solid:id-card"
     :completeness="props.completeness"
   >
     <div class="p-5 text-sm">This card contains personal information content.</div>

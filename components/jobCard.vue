@@ -12,13 +12,16 @@
         </div>
         <div class="text-base">{{ props.job.job_level }}</div>
         <div class="flex items-center justify-between w-full">
-          <div class="w-1/3 truncate">
+          <div class="flex items-center w-1/3 truncate">
+            <Icon name="ph:map-pin-area-bold" class="mr-2 size-4" />
             {{ props.job.job_location }}
           </div>
-          <div class="w-1/3 truncate">
+          <div class="flex items-center w-1/3 truncate">
+            <Icon name="ph:graduation-cap-bold" class="mr-2 size-4" />
             {{ props.job.job_education }}
           </div>
-          <div class="w-1/3 truncate">
+          <div class="flex items-center w-1/3 truncate">
+            <Icon name="ph:money-wavy-bold" class="mr-2 size-4" />
             {{ props.job.job_salary }}
           </div>
         </div>

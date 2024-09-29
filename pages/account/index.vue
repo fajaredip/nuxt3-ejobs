@@ -20,7 +20,7 @@
           <span
             class="absolute flex items-center justify-center p-2 text-xs text-white bg-blue-500 border-4 border-white rounded-full cursor-pointer dark:border-gray-800 top-3 -right-[1.15rem] hover:bg-blue-600"
           >
-            <i class="fa-solid fa-camera" />
+          <Icon name="fa6-solid:camera" />
           </span>
         </div>
         <div class="flex flex-col items-start justify-start">
@@ -30,15 +30,16 @@
           <div
             class="flex flex-col items-start justify-start gap-5 mb-3 text-sm md:flex-row"
           >
-            <span>
-              <i class="mr-2 fa-solid fa-location-dot" />
+            <span class="flex items-center">
+              <Icon name="ph:map-pin-area-bold" class="mr-2 size-4" />
               <span>Jakarta, Indonesia</span>
             </span>
-            <span>
-              <i class="mr-2 fa-solid fa-envelope" />
+            <span class="flex items-center">
+              <Icon name="ph:envelope-bold" class="mr-2 size-4" />
               <span class="break-all">fajaredip@gmail.com</span>
             </span>
-            <span>
+            <span class="flex items-center">
+              <Icon name="fa6-solid:mobile-screen-button" class="size-4" />
               <i class="mr-2 fa-solid fa-mobile-screen-button" />
               <span>+62 812 3456 7890</span>
             </span>
@@ -82,23 +83,23 @@
           <ProfileStrength :completeness="completeness" />
           <div class="p-1 bg-white rounded-md dark:bg-gray-800">
             <ul>
-              <li class="p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
-                <i class="w-6 fa-solid fa-file-lines" />
+              <li class="flex items-center p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
+                <Icon name="fa-solid:file-alt" class="mr-3 size-4" />
                 Upload CV
               </li>
-              <li class="p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
-                <i class="w-6 fa-solid fa-video" />
+              <li class="flex items-center p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
+                <Icon name="fa6-solid:file-video" class="mr-3 size-4" />
                 Upload Video Profile
               </li>
               <NuxtLink to="/account/change-password">
-                <li class="p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
-                  <i class="w-6 fa-solid fa-user-gear" />
+                <li class="flex items-center p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
+                  <Icon name="mdi:account-settings-variant" class="mr-3 size-4" />
                   Account Setting
                 </li>
               </NuxtLink>
               <NuxtLink to="/account/summary">
-                <li class="p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
-                  <i class="w-6 fa-solid fa-list-check" />
+                <li class="flex items-center p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
+                  <Icon name="octicon:checklist" class="mr-3 size-4" />
                   Summary
                 </li>
               </NuxtLink>

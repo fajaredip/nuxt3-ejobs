@@ -1,5 +1,5 @@
 <template>
-  <ExpandableCard title="Achievement" icon-class="fa-solid fa-trophy">
+  <ExpandableCard title="Achievement" icon-class="fa6-solid:trophy">
     <div class="p-5 text-sm">This card contains Achievement content.</div>
   </ExpandableCard>
 </template>

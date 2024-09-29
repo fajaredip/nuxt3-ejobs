@@ -36,13 +36,15 @@
         <DropdownMenuSub>
           <DropdownMenuSubTrigger class="px-4 py-3">
             <span>Theme</span>
-            <i
-              class="ml-auto"
-              :class="{
-                'fa-solid fa-display': activeTheme === 'system',
-                'fa-regular fa-sun': activeTheme === 'light',
-                'fa-regular fa-moon': activeTheme === 'dark',
-              }"
+            <Icon
+              :name="
+                activeTheme === 'system'
+                  ? 'ph:desktop-tower'
+                  : activeTheme === 'dark'
+                  ? 'ph:moon-bold'
+                  : 'ph:sun-bold'
+              "
+              class="ml-auto size-4"
             />
           </DropdownMenuSubTrigger>
           <DropdownMenuPortal>
@@ -54,21 +56,23 @@
                 :class="{ 'text-blue-500': activeTheme === 'system' }"
                 @click="setTheme('system')"
               >
-                <i class="w-5 mr-2 fa-solid fa-display" />
+                <Icon name="ph:desktop-tower" class="mr-4 size-4" />
                 <span>System</span>
               </DropdownMenuItem>
               <DropdownMenuItem
                 class="flex items-center w-40 px-4 py-3"
                 :class="{ 'text-blue-500': activeTheme === 'light' }"
                 @click="setTheme('light')"
-                ><i class="w-5 mr-2 fa-regular fa-sun" />
+              >
+                <Icon name="ph:sun-bold" class="mr-4 size-4" />
                 <span>Light Mode</span>
               </DropdownMenuItem>
               <DropdownMenuItem
                 class="flex items-center w-40 px-4 py-3"
                 :class="{ 'text-blue-500': activeTheme === 'dark' }"
                 @click="setTheme('dark')"
-                ><i class="w-5 mr-2 fa-regular fa-moon" />
+              >
+                <Icon name="ph:moon-bold" class="mr-4 size-4" />
                 <span>Dark Mode</span>
               </DropdownMenuItem>
             </DropdownMenuSubContent>
@@ -125,9 +129,9 @@
             </DropdownMenuSubContent>
           </DropdownMenuPortal>
         </DropdownMenuSub>
-          <DropdownMenuItem class="px-4 py-3" @click="handleLogout">
-            <span>Sign Out</span></DropdownMenuItem
-          >
+        <DropdownMenuItem class="px-4 py-3" @click="handleLogout">
+          <span>Sign Out</span></DropdownMenuItem
+        >
       </DropdownMenuGroup>
     </DropdownMenuContent>
   </DropdownMenu>
@@ -184,8 +188,8 @@ const setTheme = (theme: string) => {
 
 const handleLogout = () => {
   localStorage.removeItem("isLogin");
-  router.push('/')
-}
+  router.push("/");
+};
 
 // Initialize theme based on localStorage or system preference
 onMounted(() => {

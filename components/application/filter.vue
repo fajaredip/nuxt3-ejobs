@@ -2,7 +2,9 @@
 	<div class="w-full p-5 bg-white rounded-md text-slate-800 dark:bg-gray-800 dark:text-white">
 		<div class="flex items-center justify-between mb-3 text-lg font-semibold">
 			Filter
-			<i class="cursor-pointer fa-solid fa-arrows-rotate" />
+			<button>
+				<Icon name="fa6-solid:arrow-rotate-left" class="size-4" />
+			</button>
 		</div>
 		<div class="mb-3 text-sm">
 			<label for="sortBy">Sort by</label>

@@ -3,24 +3,24 @@
     class="sticky top-0 z-40 bg-white shadow dark:bg-gray-800 dark:border-slate-950 dark:border-b"
   >
     <nav class="container flex items-center justify-between p-5 mx-auto">
-      <div class="flex items-center justify-between flex-grow gap-5">
-        <div class="flex items-center gap-5">
+      <div class="flex items-center justify-between flex-grow">
+        <div class="flex items-center">
           <img :src="logoSrc" alt="Logo" class="flex-shrink-0 w-40" />
-          <ul v-if="isLogin == 'true'" class="flex items-center gap-10 ml-7">
+          <ul v-if="isLogin == 'true'" class="flex items-end gap-5 ml-7">
             <NuxtLink to="/job/vacancy">
               <li
-                class="flex items-center cursor-pointer text-slate-800 dark:text-white"
+                class="flex items-center px-3 py-2 rounded-md cursor-pointer text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700"
               >
-                <i class="mr-2 fa-solid fa-briefcase" />
-                <span class="hidden lg:block">Job Board</span>
+                <Icon name="ph:briefcase-bold" class="mr-2" />
+                <span class="hidden md:block">Job Board</span>
               </li>
             </NuxtLink>
             <NuxtLink to="/job/application">
               <li
-                class="flex items-center cursor-pointer text-slate-800 dark:text-white"
+                class="flex items-center px-3 py-2 rounded-md cursor-pointer text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700"
               >
-                <i class="mr-2 fa-solid fa-folder" />
-                <span class="hidden lg:block">Job Application</span>
+                <Icon name="ph:folder-bold" class="mr-2" />
+                <span class="hidden md:block">Job Application</span>
               </li>
             </NuxtLink>
           </ul>
@@ -76,7 +76,7 @@ onMounted(() => {
     document.documentElement.classList.remove("dark");
     updateTheme("light");
   }
-  
+
   // check login
   if (localStorage.isLogin === "true") {
     isLogin.value = "true";

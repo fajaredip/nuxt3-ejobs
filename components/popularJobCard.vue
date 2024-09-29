@@ -24,16 +24,16 @@ const props = defineProps<{ job: Job }>();
     </h2>
     <p class="text-base">{{ props.job.job_level }}</p>
     <div class="flex flex-col items-start gap-2 mt-3">
-      <span class="flex items-start">
-        <i class="w-5 mr-2 fa-solid fa-location-dot" />
+      <span class="flex items-center">
+        <Icon name="ph:map-pin-area-bold" class="mr-3 size-4" />
         <span>{{ props.job.job_location }}</span>
       </span>
-      <span class="flex items-start">
-        <i class="w-5 mr-2 fa-solid fa-graduation-cap" />
+      <span class="flex items-center">
+        <Icon name="ph:graduation-cap-bold" class="mr-3 size-4" />
         <span>{{ props.job.job_education }}</span>
       </span>
-      <span class="flex items-start">
-        <i class="w-5 mr-2 fa-solid fa-sack-dollar" />
+      <span class="flex items-center">
+        <Icon name="ph:money-wavy-bold" class="mr-3 size-4" />
         <span>{{ props.job.job_salary }}</span>
       </span>
     </div>

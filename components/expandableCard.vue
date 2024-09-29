@@ -1,31 +1,35 @@
 <template>
   <div
     class="relative flex before:border-l-4 before:absolute before:left-4 before:top-0 before:h-full before:last-of-type:border-none"
-    :class="props.completeness ? 'before:border-blue-500' : 'before:border-gray-400'"
+    :class="
+      props.completeness ? 'before:border-blue-500' : 'before:border-gray-400'
+    "
   >
     <div
       class="flex items-start justify-center h-full mr-3 font-extrabold text-white"
     >
-      <i
-        class="z-10 flex items-center justify-center rounded-full size-9 fa-solid"
-        :class="
-          props.completeness ? 'fa-check bg-blue-500' : 'fa-times bg-gray-400'
-        "
-      />
+      <span
+        class="z-10 flex items-center justify-center p-2 rounded-full"
+        :class="props.completeness ? 'bg-blue-500' : 'bg-gray-400'"
+      >
+        <Icon
+          :name="props.completeness ? 'fa6-solid:check' : 'uil:times'"
+          class="size-5"
+        />
+      </span>
     </div>
-    <div
-      class="w-full mb-5 bg-white rounded-md dark:bg-gray-800"
-    >
+    <div class="w-full mb-5 bg-white rounded-md dark:bg-gray-800">
       <div
-        class="flex items-center justify-between px-5 py-4 cursor-pointer "
+        class="flex items-center justify-between px-5 py-4 cursor-pointer"
         @click="toggleCard"
       >
         <div class="flex items-center justify-start">
-          <i :class="['mr-3', props.iconClass]" />
+          <Icon :name="props.iconClass" class="mr-3 size-5" />
           <span class="text-xl font-medium">{{ props.title }}</span>
         </div>
-        <i
-          class="fa-solid fa-angle-down"
+        <Icon
+          name="fa-solid:angle-down"
+          class="size-5"
           :class="{ 'rotate-180': isCardOpen }"
         />
       </div>

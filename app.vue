@@ -7,12 +7,6 @@
 				href: "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700 |Material+Icons",
 			},
 		],
-		script: [
-			{
-				crossorigin: "anonymous",
-				src: "https://kit.fontawesome.com/0db2cbd175.js",
-			},
-		],
 	});
 </script>
 

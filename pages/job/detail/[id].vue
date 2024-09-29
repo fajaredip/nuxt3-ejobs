@@ -206,7 +206,7 @@ const handleApply = () => {
       </div>
     </div>
     <div class="hidden xl:block xl:w-1/5">
-      <div class="sticky flex flex-col gap-3 top-24">
+      <div class="sticky top-0 flex flex-col gap-3">
         <button
           class="flex items-center justify-center w-full px-10 py-5 text-xl font-medium text-white bg-green-600 rounded-md hover:bg-green-700 disabled:bg-gray-600"
           :disabled="isLoading"

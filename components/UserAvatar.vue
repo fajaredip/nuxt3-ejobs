@@ -46,9 +46,7 @@
           </DropdownMenuSubContent>
         </DropdownMenuPortal>
       </DropdownMenuSub>
-      <NuxtLink to="/">
-        <DropdownMenuItem class="cursor-pointer">Logout</DropdownMenuItem>
-      </NuxtLink>
+      <DropdownMenuItem class="cursor-pointer" @click="logout">Logout</DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>
 </template>
@@ -64,8 +62,17 @@ import { onMounted, defineEmits } from "vue";
 
 const emit = defineEmits(["updateTheme"]);
 
-const avatarUrl =
-  "https://onboarding-staging.elabram.com/public/hris/files/asset/S7dcC.300-11.jpg";
+const supabase = useSupabaseClient()
+const user = useSupabaseUser()
+
+const avatarUrl = computed(() =>
+  user.value?.user_metadata?.avatar_url ?? 'https://onboarding-staging.elabram.com/public/hris/files/asset/S7dcC.300-11.jpg'
+)
+
+async function logout() {
+  await supabase.auth.signOut()
+  navigateTo('/')
+}
 
 const activeTheme = ref("system");
 

@@ -7,6 +7,18 @@
 			name: "slide-in",
 		},
 	});
+
+	// When Supabase redirects back with ?code= (email verification magic link),
+	// the module exchanges the code for a session automatically.
+	// Once we detect the user is logged in, redirect to the dashboard.
+	const user = useSupabaseUser()
+	const route = useRoute()
+
+	watch(user, (newUser) => {
+		if (newUser && route.query.code) {
+			navigateTo('/job/vacancy')
+		}
+	})
 </script>
 
 <template>

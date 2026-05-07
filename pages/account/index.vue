@@ -4,6 +4,7 @@ definePageMeta({
 	layoutTransition: {
 		name: "slide-in",
 	},
+	middleware: 'auth',
 });
 </script>
 

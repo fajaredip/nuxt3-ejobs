@@ -1,24 +1,19 @@
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+defineProps<{ isOpen: boolean }>()
+const emit = defineEmits<{ 'toggle-sidebar': [value: boolean] }>()
 
-export default defineComponent({
-  props: {
-    isOpen: {
-      type: Boolean,
-      required: true,
-    },
-  },
-  data() {
-    return {
-      email: "",
-    };
-  },
-  methods: {
-    closeSidebar() {
-      this.$emit("toggle-sidebar", false);
-    },
-  },
-});
+// Which form to show: login → signup → check-email
+const step = ref<'login' | 'signup' | 'check-email'>('login')
+
+function closeSidebar() {
+  emit('toggle-sidebar', false)
+  // Reset after the slide-out animation finishes
+  setTimeout(() => { step.value = 'login' }, 300)
+}
+
+function onSignedUp() {
+  step.value = 'check-email'
+}
 </script>
 
 <template>
@@ -34,42 +29,35 @@ export default defineComponent({
           class="absolute top-0 left-0 cursor-pointer hover:grayscale-[50%]"
           @click="closeSidebar"
         />
+
         <div class="flex flex-col items-center mt-16">
-          <img src="/logo.png" alt="" class="w-36" />
-          <div class="w-full my-5">
-            <InputPrepend
-              v-model="email"
-              icon="fa-regular fa-envelope"
-              placeholder="Input Email"
-              class="mb-3"
-            />
-            <InputPrepend
-              v-model="email"
-              icon="fa-regular fa-envelope"
-              placeholder="Input Email"
-            />
+          <img src="/logo.png" alt="" class="w-36 mb-6" />
+
+          <LoginForm v-if="step === 'login'" @success="closeSidebar" />
+          <SignupForm v-else-if="step === 'signup'" @signed-up="onSignedUp" />
+
+          <!-- Shown after signup: tell user to check email -->
+          <div v-else-if="step === 'check-email'" class="flex flex-col items-center gap-3 text-center w-full">
+            <i class="fa-regular fa-envelope text-4xl text-blue-700" />
+            <p class="font-semibold text-gray-700">Check your email</p>
+            <p class="text-sm text-gray-500">We sent a verification link to your inbox. Click it to activate your account.</p>
+            <button class="mt-2 text-sm text-blue-700 hover:underline" @click="step = 'login'">Back to login</button>
           </div>
-          <div class="mt-8 divider-container">
-            <div class="divider-text">or login with</div>
-            <div class="divider-line"></div>
-          </div>
-          <div class="flex items-center justify-between w-full gap-2 mt-8">
-            <button
-              class="bg-white hover:bg-gray-200 font-semibold py-2 px-4 rounded inline-flex items-center justify-between border-[#c5d3de] border-[1.5px] w-full"
-            >
-              <img src="/icon-google.svg" alt="" class="size-5" />
-              <span class="grow">Google</span>
-            </button>
-            <button
-              class="bg-white hover:bg-gray-200 font-semibold py-2 px-4 rounded inline-flex items-center justify-between border-[#c5d3de] border-[1.5px] w-full"
-            >
-              <img src="/icon-linkedin.svg" alt="" class="size-5" />
-              <span class="grow">Linkedin</span>
-            </button>
-          </div>
+
+          <p v-if="step === 'login' || step === 'signup'" class="mt-5 text-sm text-gray-500">
+            <template v-if="step === 'login'">
+              Don't have an account?
+              <button class="text-blue-700 font-medium hover:underline" @click="step = 'signup'">Sign up</button>
+            </template>
+            <template v-else>
+              Already have an account?
+              <button class="text-blue-700 font-medium hover:underline" @click="step = 'login'">Login</button>
+            </template>
+          </p>
         </div>
       </div>
-      <p class="text-sm font-normal text-center">
+
+      <p class="text-sm font-normal text-center text-gray-500">
         ELABRAM SYSTEMS has never requested any amount of money / gratification
         in any form. If you found any of those, please report it immediately to
         <span class="text-[#7491a7] font-medium">compliance@elabram.com</span>
@@ -77,6 +65,7 @@ export default defineComponent({
     </div>
   </transition>
 </template>
+
 <style scoped>
 .login-container {
   background-image: url("/bg-login.svg");
@@ -84,49 +73,12 @@ export default defineComponent({
   background-size: cover;
 }
 
-.divider-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.divider-text {
-  color: #7491a7;
-  font-size: 14px;
-  font-weight: 400;
-  position: absolute;
-  background: #fff;
-  padding: 0 16px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
-}
-
-.divider-line {
-  border-bottom: 1px solid #7491a7;
-  width: 100%;
-}
-
 .slide-enter-active,
 .slide-leave-active {
   transition: transform 0.3s ease;
 }
-
-.slide-enter-from {
-  transform: translateX(100%);
-}
-
-.slide-enter-to {
-  transform: translateX(0%);
-}
-
-.slide-leave-from {
-  transform: translateX(0%);
-}
-
-.slide-leave-to {
-  transform: translateX(100%);
-}
+.slide-enter-from { transform: translateX(100%); }
+.slide-enter-to   { transform: translateX(0%); }
+.slide-leave-from { transform: translateX(0%); }
+.slide-leave-to   { transform: translateX(100%); }
 </style>

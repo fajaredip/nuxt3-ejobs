@@ -25,16 +25,16 @@
           </ul>
         </div>
       </div>
-      <div class="hidden">
+      <div>
+        <!-- Show login button when not logged in, avatar when logged in -->
         <button
+          v-if="!user"
           class="px-4 py-2 text-white bg-blue-800 rounded dark:text-black dark:bg-blue-400"
           @click="openSidebar"
         >
-          Button 1
+          Login
         </button>
-      </div>
-      <div>
-        <UserAvatar @update-theme="updateTheme" />
+        <UserAvatar v-else @update-theme="updateTheme" />
       </div>
     </nav>
   </header>
@@ -45,6 +45,8 @@ import { ref, defineEmits, computed } from "vue";
 
 // Emit events for the sidebar
 const emit = defineEmits(["toggle-sidebar"]);
+
+const user = useSupabaseUser()
 
 // Ref to track sidebar open state
 const isOpen = ref(false);

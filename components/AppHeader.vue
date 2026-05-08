@@ -5,7 +5,7 @@
       <div class="flex items-center justify-between flex-grow gap-5">
         <div class="flex items-center gap-5">
           <img :src="logoSrc" alt="Logo" class="flex-shrink-0 w-40" />
-          <ul class="flex items-center gap-10 ml-7">
+          <ul v-if="user" class="flex items-center gap-10 ml-7">
             <NuxtLink to="/job/vacancy">
               <li
                 class="flex items-center text-black cursor-pointer dark:text-white"

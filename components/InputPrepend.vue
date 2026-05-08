@@ -15,9 +15,13 @@ export default defineComponent({
       type: String,
       default: "",
     },
+    type: {
+      type: String,
+      default: "text",
+    },
   },
   emits: ["update:modelValue"],
-  setup(props, { emit }) {
+  setup(_, { emit }) {
     const updateValue = (event: Event) => {
       const target = event.target as HTMLInputElement;
       emit("update:modelValue", target.value);
@@ -36,12 +40,12 @@ export default defineComponent({
     <span
       class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
     >
-      <Icon name="fa6-regular:envelope" class="text-gray-500" />
+      <Icon :name="icon" class="text-gray-500" />
     </span>
 
     <!-- Input Field -->
     <input
-      type="text"
+      :type="type"
       :value="modelValue"
       :placeholder="placeholder"
       class="w-full py-2 pl-10 pr-4 border border-gray-300 rounded-md focus:ring focus:ring-blue-200 focus:border-blue-500"

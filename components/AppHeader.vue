@@ -6,7 +6,7 @@
       <div class="flex items-center justify-between flex-grow">
         <div class="flex items-center">
           <img :src="logoSrc" alt="Logo" class="flex-shrink-0 w-40" />
-          <ul v-if="isLogin == 'true'" class="flex items-end gap-5 ml-7">
+          <ul v-if="user" class="flex items-end gap-5 ml-7">
             <NuxtLink to="/job/vacancy">
               <li
                 class="flex items-center px-3 py-2 rounded-md cursor-pointer text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700"
@@ -48,13 +48,9 @@ const emit = defineEmits(["toggle-sidebar"]);
 
 const user = useSupabaseUser();
 
-// Ref to track sidebar open state
-const isOpen = ref(false);
-const isLogin = ref("false");
 const appliedTheme = ref("");
 
 const openSidebar = () => {
-  isOpen.value = true;
   emit("toggle-sidebar", true);
 };
 
@@ -79,13 +75,5 @@ onMounted(() => {
     updateTheme("light");
   }
 
-  // check login
-  if (localStorage.isLogin === "true") {
-    isLogin.value = "true";
-    router.push("/job/vacancy");
-  } else {
-    isLogin.value = "false";
-    router.push("/");
-  }
 });
 </script>

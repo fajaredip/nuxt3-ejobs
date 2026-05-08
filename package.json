@@ -20,7 +20,8 @@
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "vue": "latest"
+    "vue": "latest",
+    "ws": "^8.20.0"
   },
   "devDependencies": {
     "@iconify-json/ph": "^1.2.0",

@@ -26,27 +26,29 @@
           </ul>
         </div>
       </div>
-      <div v-if="isLogin == 'false'">
+      <div>
+        <!-- Show login button when not logged in, avatar when logged in -->
         <button
-          class="px-5 py-2 text-white bg-[linear-gradient(45deg,#eb5f26,#ffc107)] rounded-md"
+          v-if="!user"
+          class="px-4 py-2 text-white bg-blue-800 rounded dark:text-black dark:bg-blue-400"
           @click="openSidebar"
         >
           Login
         </button>
-      </div>
-      <div v-else>
-        <UserDropdown @update-theme="updateTheme" />
+        <UserAvatar v-else @update-theme="updateTheme" />
       </div>
     </nav>
   </header>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from "vue";
+import {ref, computed, onMounted} from "vue";
 
 const emit = defineEmits(["toggle-sidebar"]);
 
-const router = useRouter();
+const user = useSupabaseUser();
+
+// Ref to track sidebar open state
 const isOpen = ref(false);
 const isLogin = ref("false");
 const appliedTheme = ref("");
@@ -61,7 +63,7 @@ const updateTheme = (theme: string) => {
 };
 
 const logoSrc = computed(() =>
-  appliedTheme.value === "dark" ? "/logo-dark.svg" : "/logo.png"
+  appliedTheme.value === "dark" ? "/logo-dark.svg" : "/logo.png",
 );
 
 onMounted(() => {

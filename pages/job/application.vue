@@ -28,6 +28,7 @@
 		layoutTransition: {
 			name: "slide-in",
 		},
+		middleware: 'auth',
 	});
 
 	const applicationData = [

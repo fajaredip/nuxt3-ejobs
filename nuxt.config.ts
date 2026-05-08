@@ -5,11 +5,19 @@ export default defineNuxtConfig({
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
     },
-    pageTransition: { name: "page", mode: "out-in" },
+    pageTransition: {name: "page", mode: "out-in"},
   },
   compatibilityDate: "2024-04-03",
-  devtools: { enabled: true },
-  modules: ["@nuxt/eslint", "@nuxtjs/tailwindcss", "shadcn-nuxt", "@nuxt/icon"],
+  devtools: {enabled: true},
+  modules: [
+    "@nuxt/eslint",
+    "@nuxtjs/tailwindcss",
+    "shadcn-nuxt",
+    "@nuxtjs/supabase",
+  ],
+  supabase: {
+    redirect: false,
+  },
   css: ["~/assets/css/main.css"],
   postcss: {
     plugins: {

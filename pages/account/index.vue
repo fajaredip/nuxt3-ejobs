@@ -1,3 +1,13 @@
+<script setup lang="ts">
+definePageMeta({
+  layout: "default",
+  layoutTransition: {
+    name: "slide-in",
+  },
+  middleware: "auth",
+});
+</script>
+
 <template>
   <section class="text-slate-800 dark:text-white">
     <div class="container px-5 mx-auto">
@@ -8,7 +18,7 @@
         <div class="w-full h-2 bg-gray-300 rounded-full">
           <div
             class="h-2 bg-blue-500 rounded-full"
-            :style="{ width: completeness.percentage }"
+            :style="{width: completeness.percentage}"
           />
         </div>
       </div>
@@ -20,7 +30,7 @@
           <span
             class="absolute flex items-center justify-center p-2 text-xs text-white bg-blue-500 border-4 border-white rounded-full cursor-pointer dark:border-gray-800 top-3 -right-[1.15rem] hover:bg-blue-600"
           >
-          <Icon name="fa6-solid:camera" />
+            <Icon name="fa6-solid:camera" />
           </span>
         </div>
         <div class="flex flex-col items-start justify-start">
@@ -83,22 +93,33 @@
           <ProfileStrength :completeness="completeness" />
           <div class="p-1 bg-white rounded-md dark:bg-gray-800">
             <ul>
-              <li class="flex items-center p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
+              <li
+                class="flex items-center p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200"
+              >
                 <Icon name="fa-solid:file-alt" class="mr-3 size-4" />
                 Upload CV
               </li>
-              <li class="flex items-center p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
+              <li
+                class="flex items-center p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200"
+              >
                 <Icon name="fa6-solid:file-video" class="mr-3 size-4" />
                 Upload Video Profile
               </li>
               <NuxtLink to="/account/change-password">
-                <li class="flex items-center p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
-                  <Icon name="mdi:account-settings-variant" class="mr-3 size-4" />
+                <li
+                  class="flex items-center p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200"
+                >
+                  <Icon
+                    name="mdi:account-settings-variant"
+                    class="mr-3 size-4"
+                  />
                   Account Setting
                 </li>
               </NuxtLink>
               <NuxtLink to="/account/summary">
-                <li class="flex items-center p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200">
+                <li
+                  class="flex items-center p-3 text-sm rounded-md cursor-pointer hover:dark:bg-slate-700 hover:bg-slate-200"
+                >
                   <Icon name="octicon:checklist" class="mr-3 size-4" />
                   Summary
                 </li>

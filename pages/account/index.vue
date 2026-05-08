@@ -1,13 +1,3 @@
-<script setup lang="ts">
-definePageMeta({
-  layout: "default",
-  layoutTransition: {
-    name: "slide-in",
-  },
-  middleware: "auth",
-});
-</script>
-
 <template>
   <section class="text-slate-800 dark:text-white">
     <div class="container px-5 mx-auto">
@@ -149,6 +139,7 @@ definePageMeta({
   layoutTransition: {
     name: "slide-in",
   },
+  middleware: "auth",
 });
 
 const completeness = {
